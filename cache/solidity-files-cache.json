@@ -683,6 +683,41 @@
       "artifacts": [
         "console"
       ]
+    },
+    "/home/ed/src/ERC20_oz/contracts/staking.sol": {
+      "lastModificationDate": 1632759883071,
+      "contentHash": "65d85f9ad14bcecd12517d1ac7113130",
+      "sourceName": "contracts/staking.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20_test",
+        "Staking"
+      ]
     }
   }
 }
