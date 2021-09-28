@@ -17,11 +17,11 @@ describe("Token contract", function () {
     await token.connect(addr1).approve(owner.address, 300);
     });
 
-  describe("Mint", function () {
-    it("Should send all of the tokens to deployer", async function () {
-      expect(await token.balanceOf(owner.address)).to.equal(1000);
-    });
-  });
+  // describe("Mint", function () {
+  //   it("Should send all of the tokens to deployer", async function () {
+  //     expect(await token.balanceOf(owner.address)).to.equal(1000);
+  //   });
+  // });
 
   describe("Transfer", function () {
     it("Should send 500 wei to the given address", async function () {
@@ -44,6 +44,6 @@ describe("Token contract", function () {
       expect(await token.balanceOf(addr1.address)).to.equal(0);
     });
   });
-
+  
 });
 

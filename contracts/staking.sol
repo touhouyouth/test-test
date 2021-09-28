@@ -1,5 +1,7 @@
 pragma solidity ^0.8.0;
 
+import "hardhat/console.sol";
+
 interface ERC20_test {
   function balanceOf(address who) external view returns (uint256 balance);
 
@@ -43,7 +45,10 @@ contract Staking {
     function harvest() public {
         require(stakes[msg.sender].start != 0, "You have not a stake running");
         uint256 amount;
+        // console.log(block.timestamp - stakes[msg.sender].last_harvest, stakes[msg.sender].amounta, rate, ((block.timestamp - stakes[msg.sender].last_harvest) * stakes[msg.sender].amounta * rate) / 100);
+        // console.log(block.timestamp - stakes[msg.sender].last_harvest);
         amount = ((block.timestamp - stakes[msg.sender].last_harvest) * stakes[msg.sender].amounta * rate) / 100;
+        // console.log(amount, '++', block.timestamp - stakes[msg.sender].last_harvest);
         stakes[msg.sender].last_harvest = block.timestamp;
         TOKENB.transfer(msg.sender, amount);
     }
